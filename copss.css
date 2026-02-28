@@ -122,13 +122,13 @@ section {
 }
 
 /* Sub-Text */
+
 .sub-text {
     font-size: 45px;
     font-weight: bold;
-    color: #f39c12;
     margin-bottom: 30px;
+    color: #f39c12;
 }
-
 /* Responsive Styles */
 
         /* end................. */
