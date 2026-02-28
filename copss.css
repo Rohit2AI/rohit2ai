@@ -123,9 +123,10 @@ section {
 
 /* Sub-Text */
 .sub-text {
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 45px;
+    font-weight: bold;
     color: #f39c12;
+    margin-bottom: 30px;
 }
 
 /* Responsive Styles */
