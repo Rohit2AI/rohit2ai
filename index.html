@@ -254,8 +254,7 @@ Python (Pandas – Learning Stage)
 
   ......... -->
 
-
-    <!-- ===================== NAVBAR + HOME + ABOUT ===================== -->
+<!-- ===================== NAVBAR + HOME + ABOUT  ===================== -->
 <header class="nv" id="nv">
   <div class="nv-bar">
     <a href="#home" class="nv-logo" id="nvLogo"></a>
@@ -284,7 +283,7 @@ Python (Pandas – Learning Stage)
     </div>
     <div class="hr-right hr-in">
       <div class="hr-term">
-        <div class="bar"><i></i><i></i><i></i><span>profile.js</span></div>
+        <div class="bar"><i></i><i></i><i></i><span>profile.py</span></div>
         <pre id="hrCode"></pre>
       </div>
       <div class="hr-chip c1" id="hrC1"></div><div class="hr-chip c2" id="hrC2"></div><div class="hr-chip c3" id="hrC3"></div>
@@ -483,12 +482,30 @@ Python (Pandas – Learning Stage)
     .hr-in,.ab-rv,.hr-term .ln{opacity:1!important; transform:none!important}
     html{scroll-behavior:auto}
   }
+
+  /* ===== MOBILE / RESPONSIVE FIX ===== */
+  .nv,.nv *,.nv-menu,.nv-menu *,#home,#home *,#about,#about *{box-sizing:border-box}
+  .nv button{font-family:inherit}
+  body{overflow-x:hidden}
+  .hr-inner{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+  .ab-wrap{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+  .hr-left,.hr-right,.ab-photo,.ab-text{min-width:0}
+  .hr-term{max-width:100%}
+  .ab-facts{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
+  @media (max-width:900px){
+    .hr-inner,.ab-wrap{grid-template-columns:minmax(0,1fr)}
+  }
+  @media (max-width:600px){
+    .nv{padding:0 10px}
+    .hr-term pre{white-space:pre-wrap; word-break:break-word; font-size:.76rem; padding:16px}
+    .hr-chip.c1{right:4%} .hr-chip.c3{right:4%}
+  }
 </style>
 
 <script>
 (function(){
   /* =====================================================================
-     ✅ EDIT(HTML/CSS)
+     ✅ ALL ED
      ===================================================================== */
   const nav = {
     logoImg : 'img.git/Rohit2AI (2).png',   // logo image (load na ho to naam dikhega)
@@ -533,15 +550,13 @@ Python (Pandas – Learning Stage)
     title : 'Data Analyst | <em>Rohit Kumar</em>',
     paras : [
       'I am a B.Tech student in Robotics & Artificial Intelligence at World College of Technology and Management with a strong interest in Data Analytics and intelligent systems.',
-      
-      'I am a B.Tech student in Robotics & Artificial Intelligence at World College of Technology and Management with a strong interest in Data Analytics and intelligent systems.',
 'I specialize in Advanced Excel, PostgreSQL, Power BI, and R Programming, and I am currently enhancing my skills in Python for data analysis. I enjoy transforming raw data into meaningful insights that support smart decision-making and business growth.',
 'Through hands-on internship experiences in Robotic Weld Operations, Data Visualization, Marketing, and Web Development, I have developed practical problem-solving abilities, analytical thinking, and technical implementation skills.',
 'In addition, I maintain a structured GitHub project portfolio indexed via Google Search Console to improve project visibility and demonstrate technical proficiency.',
 'I am passionate about continuous learning, innovation, and leveraging data-driven strategies to build efficient, scalable, and impactful solutions in the field of Data Analytics and Artificial Intelligence.',
                 
     ],
-    facts : [                                  // icon, label, value — add/re
+    facts : [                                  // icon, label, value — add/remove karo
       { icon:'🎓', label:'Education', value:'B.Tech in Robotics & AI' },
       { icon:'🏫', label:'College',   value:'World College of Technology & Management' },
       { icon:'📅', label:'Graduating', value:'2027' },
@@ -551,7 +566,7 @@ Python (Pandas – Learning Stage)
     buttons:[ { text:'Download Resume', href:'resume.pdf', style:'p', download:true }, { text:"Let's Talk", href:'#contact', style:'g' } ]
   };
 
-  /* ------------------------- Rendering ------------------------- */
+  /* ------------------------- Rendering (isko mat chhedo) ------------------------- */
   const $ = id => document.getElementById(id);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -609,9 +624,16 @@ Python (Pandas – Learning Stage)
 
   // terminal code
   const val = v => Array.isArray(v) ? `[${v.map(x => `<span class="t-s">"${esc(x)}"</span>`).join(', ')}]`
-    : typeof v === 'boolean' ? `<span class="t-n">${v}</span>` : `<span class="t-s">"${esc(v)}"</span>`;
-  const rows = [`<span class="t-c">// who am i</span>`, `<span class="t-k">const</span> <span class="t-p">rohit</span> = {`,
-    ...hero.code.map(([k,v]) => `&nbsp;&nbsp;${esc(k)}: ${val(v)},`), `};`, `<span class="t-p">rohit</span>.<span class="t-k">learning</span>(); <span class="caret"></span>`];
+    : typeof v === 'boolean' ? `<span class="t-n">${v ? 'True' : 'False'}</span>` : `<span class="t-s">"${esc(v)}"</span>`;
+  const rows = [
+    `<span class="t-c"># who am i</span>`,
+    `<span class="t-k">import</span> <span class="t-p">pandas</span> <span class="t-k">as</span> <span class="t-p">pd</span>`,
+    `&nbsp;`,
+    `<span class="t-p">rohit</span> = {`,
+    ...hero.code.map(([k,v]) => `&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-p">"${esc(k)}"</span>: ${val(v)},`),
+    `}`,
+    `<span class="t-p">print</span>(<span class="t-s">"Learning every day..."</span>) <span class="caret"></span>`
+  ];
   $('hrCode').innerHTML = rows.map((r,i) => `<span class="ln" style="--d:${1 + i*.28}s">${r}</span>`).join('');
 
   // typewriter
@@ -689,6 +711,7 @@ Python (Pandas – Learning Stage)
 })();
 </script>
 <!-- ===================== END NAVBAR + HOME + ABOUT ===================== -->
+
 
 <!-- ===================== RESUME SECTION ===================== -->
 <section id="resume">
