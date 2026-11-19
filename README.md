@@ -71,9 +71,9 @@ Core_Stack: [Python, R Programming, PostgreSQL, Power BI, Advanced Excel, Web De
 
 | Project Name | Stack / Tools | Key Highlights |
 | :--- | :--- | :--- |
-| **🗺️ [TRACKRA – Smart Navigation & Tracking App](https://github.io)** | `HTML5` `CSS3` `JavaScript` `GIS/Maps` | Web-based smart navigation system designed to improve real-world location tracking. Showcased at *WCTM Tech Fest* & *AICTE IDE Bootcamp (IPEC)*. |
+| **🗺️ [TRACKRA – Smart Navigation & Tracking App](https://rohit2ai.github.io/Trackra/)** | `HTML5` `CSS3` `JavaScript` `GIS/Maps` | Web-based smart navigation system designed to improve real-world location tracking. Showcased at *WCTM Tech Fest* & *AICTE IDE Bootcamp (IPEC)*. |
 | **📊 Flipkart Sales Dashboard** | `Power BI` `Advanced Excel` `DAX` | Interactive end-to-end BI dashboard analyzing sales trends, revenue KPIs, product categories, and customer insights. |
-| **🌐 [Personal Developer Portfolio](https://github.io)** | `HTML5` `CSS3` `Google Search Console` | Live, SEO-indexed portfolio showcasing data analytics projects, certifications, and web solutions. |
+| **🌐 [Personal Developer Portfolio](https://rohit2ai.github.io/rohit2ai/)** | `HTML5` `CSS3` `Google Search Console` | Live, SEO-indexed portfolio showcasing data analytics projects, certifications, and web solutions. |
 | **♻️ Smart Waste Segregation & Recycling System** | `Robotics` `Artificial Intelligence` | Intelligent automation system designed for automated waste sorting and sustainable recycling. |
 
 ---
